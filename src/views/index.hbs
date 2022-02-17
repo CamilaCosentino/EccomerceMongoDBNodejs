@@ -1,0 +1,41 @@
+
+
+<div class="container mx-auto">
+<h1>Productos</h1>
+
+
+        {{#each todo}}
+
+<div class="card mb-3" style="max-width: 900px;">
+  <div class="row no-gutters">
+    <div class="col-md-4">
+      <img src="{{this.img}}" class="card-img" alt="{{this.titulo}}">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title">{{this.titulo}}</h5>
+        <p class="card-text">{{this.description}}</p>
+        <strong class="card-text">${{this.precio}}</strong>
+        <br>
+         <span>Quedan {{this.stock }} disponible/s</span>
+        <br>
+        <br>
+ <form action="/cart" method="post">
+
+ <input type="hidden" name="id"value="{{this.id}}">
+
+
+
+<button class="btn btn-primary fa fa-plus" type="submit">Agregar al carrito</button>
+ </form>
+
+  
+      </div>
+    </div>
+  </div>
+</div>
+
+ 
+
+   {{/each}}
+  </div>

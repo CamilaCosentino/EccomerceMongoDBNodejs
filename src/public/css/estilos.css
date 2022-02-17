@@ -1,0 +1,132 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: lightgray;
+}
+#profileDisplay{
+    width: 100px;
+    height: 100px;
+}
+.header-profile{
+  
+    background-color: darkcyan;
+    padding: 20px 0;
+   
+    
+    
+}
+.user {
+
+    width: 50px;
+    height: 50px;
+    overflow: hidden;
+  border-radius: 50%;
+  border: 2px solid #000
+  }
+  
+  .user img {
+width: 100%;
+padding-bottom: 20px;
+display: inline-block;
+    height: auto;
+
+
+  }
+
+.avatar img{
+    width:20%;
+    height: auto;
+   
+
+
+}
+.modal.is-visible {
+    visibility: visible;
+    opacity: 1;
+  }
+  .modal {
+    position: fixed;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    background: var(--black);
+    cursor: pointer;
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.35s ease-in;
+  }
+
+  .modal-dialog {
+    position: relative;
+    max-width: 800%;
+    max-height: 80vh;
+    border-radius: 5px;
+    background: var(--white);
+    overflow: auto;
+    cursor: default;
+  }
+  
+  .modal-dialog > * {
+    padding: 1rem;
+  }
+  
+  .modal-header,
+  .modal-footer {
+    background: var(--lightgray);
+  }
+  
+  .modal-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .modal-header .close-modal {
+    font-size: 1.5rem;
+  }
+  
+  .modal p + p {
+    margin-top: 1rem;
+  }
+  
+  
+ 
+  
+.profile-h1{
+    color: #fff;
+    text-align: center !important;
+}
+.profile{
+  background-color: #fff;
+
+}
+.data-profile{
+  text-align: center;
+
+}
+.data{
+    background-color: #fff;
+       padding-bottom: 20px ;
+       width: 100%
+}
+.btn-div{
+    margin: 20px ;
+}
+.modal .btn-close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+.ordenes{
+    margin: auto;
+    
+}
+.ordenes .card{
+    width:60%;
+}

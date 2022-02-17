@@ -1,0 +1,115 @@
+<h1>Carrito</h1>
+<a href="/" class=" btn btn-info fa fa-plus">Agrega un nuevo item</a>
+
+
+
+
+{{#if data}}
+
+<div style="background-color: seashell;">
+
+
+<table class="table table-primary
+">
+
+  <thead>
+    <tr>
+      <th scope="col">Imagen</th>
+      <th scope="col">Titulo</th>
+
+          <th scope="col">Cantidad</th>
+               <th scope="col">Precio</th>
+            <th scope="col"> Borrar</th>
+    </tr>
+  </thead>
+
+  <tbody>
+{{#each data}}
+    <tr class="table-active">
+  
+      <td><img src="{{img}}" alt="{{titulo}}" style="width: 50px;"></td>
+      <td>{{titulo}}</td>
+
+
+    <td>
+
+      <form action="/updateSuma/{{id}}?_method=PUT" method="post">
+      <input type="hidden" name="{{cantidad}}" id="cantidad">
+      <input type="hidden" name="_method" value="PUT">
+          <button type="submit" class="btn btn-secondary btn-sm">
+
+      <i class="fas fa-plus"></i></button>
+      </form>
+
+   
+<span>{{cantidad}}</span>
+
+ <form action="/updateResta/{{id}}?_method=PUT" method="post">
+      <input type="hidden" name="{{cantidad}}" id="cantidad">
+      <input type="hidden" name="_method" value="PUT">
+          <button type="submit" class="btn btn-secondary btn-sm">
+
+      <i class="fas fa-minus"></i></button>
+      </form>
+
+  
+
+
+  
+
+      </td>
+
+         <td>
+          ${{precioCart}}</td>
+  
+
+    <td>
+
+
+      <form action="/deleteI/{{id}}?_method=DELETE" method="post">
+      
+      <input type="hidden" name="_method" value="DELETE">
+      <button type="submit" class="btn btn-danger btn-sm"><i class="fas fa-trash-alt"></i></button>
+      </form>
+   
+         </td>
+     
+    </tr>
+ {{/each}}
+    </tbody>
+
+
+
+    </table>
+     
+    <p class="ml-4" style="float: left;">
+         Precio Total
+
+    <p class="mr-4" style="float: right;">
+  
+      <strong> $
+
+
+        {{precio}}
+
+      </strong>
+    </p>
+  
+
+   
+  <form action="/checkout" method="post">
+
+
+
+<button type="submit" class="btn btn-info btn-block"> Finalizar compra</button>
+
+  </form>
+{{else}}
+<h3>Carrito vacio</h3>
+{{/if}}
+    </div>
+ 
+     
+    
+    
+        

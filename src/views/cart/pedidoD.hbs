@@ -1,0 +1,66 @@
+
+<h1>Detalles del Pedido</h1>
+
+<div class="card detalles text-white bg-info mb-3 mx-auto" style="max-width: 80%;">
+
+  <div class="card-header">
+   
+     Pedido num:
+         {{#each order}}
+ {{this.n_pedido}}
+ {{/each}}     
+
+  </div>
+
+  <div class="card-body">
+  <table class="table table-bordered table-dark ">
+     <thead>
+    <tr>
+      
+      <th scope="col">Cantidad</th>
+      <th scope="col">Imagen</th>
+      <th scope="col">Titulo</th>
+      <th scope="col">Precio</th>
+    </tr>
+    
+  </thead>
+  
+  <tbody>
+{{#each prod}}
+
+ <tr >
+     
+      <th scope="row">x {{this.cantidad}}</th>
+      <td><img src="{{this.img}}" alt="{{this.titulo}}" style="width: 50px;"></td>
+      <td>{{this.titulo}}</td>
+      <td>${{this.precioC}}</td>
+     
+    </tr>
+     {{/each}}
+  
+
+
+      </tbody>
+      
+  </table>
+<table class="table table-bordered table-dark">
+  <thead>
+    <tr>
+      <th><strong style="float: right;"> Precio Total:</strong></th>
+    </tr> 
+  </thead>
+  <tbody>
+     <tr>
+         
+  
+
+      <th ><strong style="float: right;">$ {{#each order}}
+          {{this.precioTodal}}
+          {{/each}}
+      </strong></th>
+
+   </tr>
+  </tbody>
+</table>
+  </div>
+</div>

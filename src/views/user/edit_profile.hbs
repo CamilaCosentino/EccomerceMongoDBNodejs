@@ -1,0 +1,49 @@
+<div class="card mx-auto">
+    <div class="card-header">
+        <h1 class="card-title text-center">Editar perfil</h1>
+    </div>
+    <div class="card-body">
+
+       <form action="/updateUser/{{id}}?_method=PUT" method="post" enctype="multipart/form-data">
+            <input type="hidden" name="_method" value="PUT">
+            <div class="form-group text-center" style="position: relative;" >
+            <span class="img-div">
+              
+              <img class="img-fluid" src="/uploads/{{avatar}}" onClick="triggerClick()" id="profileDisplay" required>
+            </span>
+            <input type="file" name="imagen" onChange="displayImage(this)" id="profileImage" class="form-control" style="display: none;">
+            <br>
+            <label class="insert-imag-perfil">Pone tu imagen de perfil</label>
+          </div>
+      
+                <div class="form-group">
+                    <label for="">Nombre</label>
+                    <input type="text" name="nombre" id="nombre" value="{{nombre}}" class="form-control" required>
+                    </div>
+                     <div class="form-group">
+                    <label for="">Apellido</label>
+                    <input type="text" name="apellido" id="apellido"  value="{{apellido}}" class="form-control" required>
+                    </div> 
+                 
+                     <div class="form-group">
+                    <label for="">Direccion</label>
+                    <input type="text" name="direccion" id="direccion" class="form-control"  value="{{direccion}}" placeholder="Av Corrientes 2221" required>
+                    </div>
+                     <div class="form-group">
+                    <label for="">Telefono</label>
+                    <input type="text" name="tel" id="tel" class="form-control" value="{{tel}}" placeholder="(código de área) + número" required>
+                
+                    </div>
+                       <div class="form-group">
+                    <label for="">Email</label>
+                    <input type="email" name="email" id="email" class="form-control" value="{{email}}" disabled>
+                    </div>
+                     <div class="form-group">
+                    <label for="">Contraseña</label>
+                    <input type="password" name="password" id="password" class="form-control" required>
+                    </div>
+                     <button type="submit" class="btn btn-success btn-block">Actualizar</button>
+            </form>
+            
+    </div>
+</div>
